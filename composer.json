@@ -1,5 +1,5 @@
 {
-    "name": "squille/profiler",
+    "name": "burdz/squille",
     "description": "A toolsuite for PHP interactive performance profiling",
     "minimum-stability": "stable",
     "keywords": ["profiling", "performance"],
@@ -16,7 +16,16 @@
         "ext-uprofiler": "0.11.0",
         "knplabs/gaufrette": "0.1.*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5"
+    },
     "autoload": {
         "psr-4": { "Burdz\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": {"Burdz\\Test\\": "tests/units/"}
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
