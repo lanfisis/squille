@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d59b4648ff12a888a53fc09f32881006",
+    "hash": "60618c03689872b75f2ef6ac499d0f59",
     "packages": [
         {
             "name": "knplabs/gaufrette",
@@ -98,7 +98,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "ext-uprofiler": "0.11.0"
     },
     "platform-dev": []
 }

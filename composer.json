@@ -13,6 +13,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "ext-uprofiler": "0.11.0",
         "knplabs/gaufrette": "0.1.*"
     },
     "autoload": {
