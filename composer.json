@@ -1,0 +1,21 @@
+{
+    "name": "squille/profiler",
+    "description": "A toolsuite for PHP interactive performance profiling",
+    "minimum-stability": "stable",
+    "keywords": ["profiling", "performance"],
+    "homepage": "https://github.com/lanfisis/squille",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "David Buros",
+            "email": "david.buros@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "knplabs/gaufrette": "0.1.*"
+    },
+    "autoload": {
+        "psr-4": { "Burdz\\": "src/" }
+    }
+}
