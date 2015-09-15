@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Collector;
+namespace Burdz\Squille\Profiler\Collector;
 
 /**
  * Collector interface

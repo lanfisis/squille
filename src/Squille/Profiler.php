@@ -10,8 +10,8 @@
 
 namespace Burdz\Squille;
 
-use Burdz\Squille\Collector\CollectorInterface;
-use Burdz\Squille\Output\OutputInterface;
+use Burdz\Squille\Profiler\Collector\CollectorInterface;
+use Burdz\Squille\Profiler\Output\OutputInterface;
 
 /**
  * Profiler

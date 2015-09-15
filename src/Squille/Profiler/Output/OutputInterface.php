@@ -8,8 +8,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Output;
-use Burdz\Squille\Output\Formater\FormaterInterface;
+namespace Burdz\Squille\Profiler\Output;
+use Burdz\Squille\Profiler\Output\Formater\FormaterInterface;
 
 /**
  * Output interface

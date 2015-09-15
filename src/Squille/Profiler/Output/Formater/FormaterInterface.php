@@ -8,25 +8,24 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Output\Formater;
+namespace Burdz\Squille\Profiler\Output\Formater;
 
 /**
- * Array formater
+ * Formater interface
  *
  * @package   Squille
  * @author    David Buros <david.buros@gmail.com>
  * @copyright 2015 David Buros
  * @licence   WTFPL see LICENCE.md file
  */
-class ArrayFormater implements FormaterInterface
+interface FormaterInterface
 {
     /**
-     * {@inheritdoc}
+     * Format final report
      *
-     * @return array
+     * @param array $report Final report
+     *
+     * @return mixed
      */
-    public function format(array $report)
-    {
-        return $report;
-    }
+    public function format(array $report);
 }

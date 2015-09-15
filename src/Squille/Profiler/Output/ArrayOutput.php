@@ -8,33 +8,39 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Output;
-
-use Burdz\Squille\Output\Formater\FormaterInterface;
+namespace Burdz\Squille\Profiler\Output;
 
 /**
- * Abstract output
+ * Array output
  *
  * @package   Squille
  * @author    David Buros <david.buros@gmail.com>
  * @copyright 2015 David Buros
  * @licence   WTFPL see LICENCE.md file
  */
-abstract class AbstractOutput
+class ArrayOutput extends AbstractOutput implements OutputInterface
 {
     /**
-     * Formater model
+     * Profiling report
      *
-     * @var FormaterInterface
+     * @var array
      */
-    protected $formater;
+    protected $report;
 
     /**
      * {@inheritdoc}
      */
-    public function setFormater(FormaterInterface $formater)
+    public function dump()
     {
-        $this->formater = $formater;
+        return $this->report;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setReport(array $report)
+    {
+        $this->report = $report;
         return $this;
     }
 }

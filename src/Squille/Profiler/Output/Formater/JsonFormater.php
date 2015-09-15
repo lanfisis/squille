@@ -8,39 +8,25 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Output;
+namespace Burdz\Squille\Profiler\Output\Formater;
 
 /**
- * Array output
+ * Json formater
  *
  * @package   Squille
  * @author    David Buros <david.buros@gmail.com>
  * @copyright 2015 David Buros
  * @licence   WTFPL see LICENCE.md file
  */
-class ArrayOutput extends AbstractOutput implements OutputInterface
+class JsonFormater implements FormaterInterface
 {
     /**
-     * Profiling report
+     * {@inheritdoc}
      *
-     * @var array
+     * @return string
      */
-    protected $report;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function dump()
+    public function format(array $report)
     {
-        return $this->report;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setReport(array $report)
-    {
-        $this->report = $report;
-        return $this;
+        return json_encode($report, JSON_PRETTY_PRINT);;
     }
 }

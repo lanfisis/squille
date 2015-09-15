@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Test\Squille;
+namespace Burdz\Squille\Test;
 
 use Burdz\Squille\Profiler;
 
@@ -19,7 +19,7 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $output = $this->getMockBuilder('\Burdz\Squille\Output\OutputInterface')
+        $output = $this->getMockBuilder('\Burdz\Squille\Profiler\Output\OutputInterface')
             ->setMockClassName('OutputInterface')
             ->getMock();
         $this->profiler = new Profiler($output);
@@ -27,7 +27,7 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
 
     public function testPushCollectorReturnsProfiler()
     {
-        $collector = $this->getMockBuilder('\Burdz\Squille\Collector\CollectorInterface')
+        $collector = $this->getMockBuilder('\Burdz\Squille\Profiler\Collector\CollectorInterface')
             ->setMockClassName('CollectorInterface')
             ->getMock();
         $profiler = $this->profiler->pushCollector($collector);

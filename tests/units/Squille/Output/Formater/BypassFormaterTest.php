@@ -10,25 +10,21 @@
 
 namespace Burdz\Squille\Test\Profiler\Output\Formater;
 
-use Burdz\Squille\Profiler\Output\Formater\JsonFormater;
+use Burdz\Squille\Profiler\Output\Formater\BypassFormater;
 
-class JsonFormaterTest extends \PHPUnit_Framework_TestCase
+class BypassFormaterTest extends \PHPUnit_Framework_TestCase
 {
     protected $formater;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->formater = new JsonFormater();
+        $this->formater = new BypassFormater();
     }
 
     public function testFormat()
     {
-        $result =
-'{
-    "foo": "bar",
-    "baz": "foo"
-}';
+        $result = array('foo' => 'bar', 'baz' => 'foo');
         $format = $this->formater->format(array('foo' => 'bar', 'baz' => 'foo'));
         $this->assertEquals($format, $result);
     }

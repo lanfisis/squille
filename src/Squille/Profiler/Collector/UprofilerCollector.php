@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Collector;
+namespace Burdz\Squille\Profiler\Collector;
 
 /**
  * Uprofiler collector
@@ -40,7 +40,7 @@ class UprofilerCollector implements CollectorInterface
     /**
      * {@inheritdoc}
      *
-     * @return \Burdz\Squille\Collector\UprofilerCollector
+     * @return \Burdz\Squille\Profiler\Collector\UprofilerCollector
      */
     public function start()
     {
@@ -51,7 +51,7 @@ class UprofilerCollector implements CollectorInterface
     /**
      * {@inheritdoc}
      *
-     * @return \Burdz\Squille\Collector\UprofilerCollector
+     * @return \Burdz\Squille\Profiler\Collector\UprofilerCollector
      */
     public function stop()
     {

@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Output;
+namespace Burdz\Squille\Profiler\Output;
 
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Local as LocalAdapter;
