@@ -6,9 +6,9 @@ How it works
 Basically you can use the profiler like this:
 ```php
 use Burdz\Squille\Profiler;
-use Burdz\Squille\Output\FileOutput;
-use Burdz\Squille\Output\Formater\JsonFormater;
-use Burdz\Squille\Collector\UprofilerCollector;
+use Burdz\Squille\Profiler\Output\FileOutput;
+use Burdz\Squille\Profiler\Output\Formater\JsonFormater;
+use Burdz\Squille\Profiler\Collector\UprofilerCollector;
 
 $output = new FileOutput('.squille', __DIR__);
 $output->setFormater(new JsonFormater());
@@ -22,6 +22,8 @@ $profiler->start();
 
 $profiler->stop();
 $profiler->dump();
+
+// Look at .squille file in your current folder
 ```
 
 Licence
