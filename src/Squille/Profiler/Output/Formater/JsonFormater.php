@@ -10,6 +10,8 @@
 
 namespace Burdz\Squille\Profiler\Output\Formater;
 
+use Burdz\Squille\Profiler\Report;
+
 /**
  * Json formater
  *
@@ -25,8 +27,8 @@ class JsonFormater implements FormaterInterface
      *
      * @return string
      */
-    public function format(array $report)
+    public function format(Report $report)
     {
-        return json_encode($report, JSON_PRETTY_PRINT);
+        return json_encode($report->getAll(), JSON_PRETTY_PRINT);
     }
 }

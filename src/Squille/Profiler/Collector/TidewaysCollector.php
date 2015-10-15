@@ -10,6 +10,8 @@
 
 namespace Burdz\Squille\Profiler\Collector;
 
+use Burdz\Squille\Profiler\Report;
+
 /**
  * Tideways collector
  * Inspired by native Tideways Profiler but fit Squille logic
@@ -92,10 +94,13 @@ class TidewaysCollector extends AbstractCollector implements CollectorInterface
     /**
      * {@inheritdoc}
      *
-     * @return array
+     * @return Report
      */
     public function dump()
     {
-        return $this->datas;
+        $report = new Report();
+        $report->setCallstack($this->datas['callstack']);
+        $report->setTimeline($this->datas['timeline']);
+        return $report;
     }
 }

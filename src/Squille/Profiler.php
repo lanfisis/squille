@@ -72,7 +72,6 @@ class Profiler
         return $this;
     }
 
-
     /**
      * Start profiling
      *
@@ -106,7 +105,10 @@ class Profiler
      */
     public function dump()
     {
-        $this->output->setReport($this->collector->dump());
+        $report = $this->collector->dump();
+        $this->emitter->emit('profiler.dump.before', array($report));
+        $this->output->setReport($report);
+        $this->emitter->emit('profiler.dump.after', array($report));
         return $this->output->dump();
     }
 }

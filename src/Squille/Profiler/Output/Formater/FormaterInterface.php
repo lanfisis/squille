@@ -10,6 +10,8 @@
 
 namespace Burdz\Squille\Profiler\Output\Formater;
 
+use Burdz\Squille\Profiler\Report;
+
 /**
  * Formater interface
  *
@@ -23,9 +25,9 @@ interface FormaterInterface
     /**
      * Format final report
      *
-     * @param array $report Final report
+     * @param Report $report Final report
      *
      * @return mixed
      */
-    public function format(array $report);
+    public function format(Report $report);
 }

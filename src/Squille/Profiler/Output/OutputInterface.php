@@ -9,7 +9,9 @@
  */
 
 namespace Burdz\Squille\Profiler\Output;
+
 use Burdz\Squille\Profiler\Output\Formater\FormaterInterface;
+use Burdz\Squille\Profiler\Report;
 
 /**
  * Output interface
@@ -31,11 +33,11 @@ interface OutputInterface
     /**
      * Handle the result of a profiling run
      *
-     * @param array $report Profiling result
+     * @param Report $report Profiling result
      *
      * @return self
      */
-    public function setReport(array $report);
+    public function setReport(Report $report);
 
     /**
      * Set formater model

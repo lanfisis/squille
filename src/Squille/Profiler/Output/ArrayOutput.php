@@ -10,6 +10,8 @@
 
 namespace Burdz\Squille\Profiler\Output;
 
+use Burdz\Squille\Profiler\Report;
+
 /**
  * Array output
  *
@@ -23,7 +25,7 @@ class ArrayOutput extends AbstractOutput implements OutputInterface
     /**
      * Profiling report
      *
-     * @var array
+     * @var Report
      */
     protected $report;
 
@@ -32,13 +34,13 @@ class ArrayOutput extends AbstractOutput implements OutputInterface
      */
     public function dump()
     {
-        return $this->report;
+        return $this->report->getAll();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setReport(array $report)
+    public function setReport(Report $report)
     {
         $this->report = $report;
         return $this;

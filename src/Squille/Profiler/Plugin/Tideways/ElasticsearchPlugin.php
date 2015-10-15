@@ -14,7 +14,7 @@ use Evenement\EventEmitterInterface;
 use Burdz\Squille\Profiler\Plugin\PluginInterface;
 
 /**
- * Plugin interface
+ * Elasticsearch profiler plugin
  *
  * @package   Squille
  * @author    David Buros <david.buros@gmail.com>

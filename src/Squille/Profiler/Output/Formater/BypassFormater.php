@@ -10,6 +10,8 @@
 
 namespace Burdz\Squille\Profiler\Output\Formater;
 
+use Burdz\Squille\Profiler\Report;
+
 /**
  * Array formater
  *
@@ -25,7 +27,7 @@ class BypassFormater implements FormaterInterface
      *
      * @return array
      */
-    public function format(array $report)
+    public function format(Report $report)
     {
         return $report;
     }

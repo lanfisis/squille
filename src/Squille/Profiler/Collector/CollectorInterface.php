@@ -44,7 +44,7 @@ interface CollectorInterface
     /**
      * Dump profiling result
      *
-     * @return array
+     * @return \Burdz\Squille\Profiler\Report
      */
     public function dump();
 }

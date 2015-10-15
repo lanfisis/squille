@@ -10,6 +10,7 @@
 
 namespace Burdz\Squille\Profiler\Output;
 
+use Burdz\Squille\Profiler\Report;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Local as LocalAdapter;
 use Gaufrette\File;
@@ -27,7 +28,7 @@ class FileOutput extends AbstractOutput implements OutputInterface
     /**
      * Profiling record
      *
-     * @var array
+     * @var Report
      */
     protected $report;
 
@@ -75,7 +76,7 @@ class FileOutput extends AbstractOutput implements OutputInterface
     /**
      * {@inheritdoc}
      */
-    public function setReport(array $report)
+    public function setReport(Report $report)
     {
         $this->report = $report;
         return $this;
