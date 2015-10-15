@@ -12,6 +12,8 @@ namespace Burdz\Squille;
 
 use Burdz\Squille\Profiler\Collector\CollectorInterface;
 use Burdz\Squille\Profiler\Output\OutputInterface;
+use Burdz\Squille\Profiler\Plugin\PluginInterface;
+use Evenement\EventEmitter;
 
 /**
  * Profiler
@@ -24,11 +26,18 @@ use Burdz\Squille\Profiler\Output\OutputInterface;
 class Profiler
 {
     /**
-     * A collection of available collector
+     * Event emitter
      *
-     * @var CollectorInterface[]
+     * @var EventEmitter
      */
-    protected $collectors = [];
+    protected $emitter;
+
+    /**
+     * A Data collector
+     *
+     * @var CollectorInterface
+     */
+    protected $collector;
 
     /**
      * Output model
@@ -40,25 +49,29 @@ class Profiler
     /**
      * Constructor
      *
-     * @param OutputInterface   $output   Output model
+     * @param CollectorInterface $collector Collector model
+     * @param OutputInterface    $output    Output model
      */
-    public function __construct(OutputInterface $output)
+    public function __construct(CollectorInterface $collector, OutputInterface $output)
     {
-        $this->output   = $output;
+        $this->emitter   = new EventEmitter();
+        $this->collector = $collector;
+        $this->output    = $output;
     }
 
     /**
-     * Push collector into collector stock
+     * Add a plugin to profiler aware of profiler event
      *
-     * @param CollectorInterface $collector
+     * @param PluginInterface $plugin Plugin
      *
      * @return \Burdz\Squille\Profiler
      */
-    public function pushCollector(CollectorInterface $collector)
+    public function addPlugin(PluginInterface $plugin)
     {
-        $this->collectors[$collector->getIdentifier()] = $collector;
+        $plugin->attachEvents($this->emitter);
         return $this;
     }
+
 
     /**
      * Start profiling
@@ -67,9 +80,9 @@ class Profiler
      */
     public function start()
     {
-        foreach ($this->collectors as $collector) {
-            $collector->start();
-        }
+        $this->emitter->emit('profiler.start.before');
+        $this->collector->start();
+        $this->emitter->emit('profiler.start.after');
         return $this;
     }
 
@@ -80,25 +93,20 @@ class Profiler
      */
     public function stop()
     {
-        foreach ($this->collectors as $collector) {
-            $collector->stop();
-        }
+        $this->emitter->emit('profiler.stop.before');
+        $this->collector->stop();
+        $this->emitter->emit('profiler.stop.after');
         return $this;
     }
 
     /**
-     * Dump profiling results
+     * Dump profiling result
      *
      * @return \Burdz\Squille\Profiler
      */
     public function dump()
     {
-        $report = [];
-        foreach ($this->collectors as $collector) {
-
-            $report[$collector->getIdentifier()] = $collector->dump();
-        }
-        $this->output->setReport($report);
+        $this->output->setReport($this->collector->dump());
         return $this->output->dump();
     }
 }

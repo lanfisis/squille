@@ -1,7 +1,7 @@
 {
     "name": "burdz/squille",
     "description": "A toolsuite for PHP interactive performance profiling",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "keywords": ["profiling", "performance"],
     "homepage": "https://github.com/lanfisis/squille",
     "license": "WTFPL",
@@ -12,9 +12,10 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "ext-uprofiler": "0.11.0",
-        "knplabs/gaufrette": "0.1.*"
+        "php": ">=5.5.0",
+        "knplabs/gaufrette": "0.1.*",
+        "evenement/evenement": "2.0.*",
+        "perftools/xhgui": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.5"

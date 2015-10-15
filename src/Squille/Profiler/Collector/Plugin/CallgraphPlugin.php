@@ -8,25 +8,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Profiler\Output\Formater;
+namespace Burdz\Squille\Profiler\Collector\Plugin;
 
 /**
- * Json formater
+ * Callgraph plugin
  *
  * @package   Squille
  * @author    David Buros <david.buros@gmail.com>
  * @copyright 2015 David Buros
  * @licence   WTFPL see LICENCE.md file
  */
-class JsonFormater implements FormaterInterface
+class CallgraphPlugin implements PluginInterface
 {
-    /**
-     * {@inheritdoc}
-     *
-     * @return string
-     */
-    public function format(array $report)
-    {
-        return json_encode($report, JSON_PRETTY_PRINT);
-    }
+
 }

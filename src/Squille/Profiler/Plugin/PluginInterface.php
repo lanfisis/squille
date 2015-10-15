@@ -8,25 +8,26 @@
  * file that was distributed with this source code.
  */
 
-namespace Burdz\Squille\Profiler\Output\Formater;
+namespace Burdz\Squille\Profiler\Plugin;
+
+use Evenement\EventEmitterInterface;
 
 /**
- * Json formater
+ * Plugin interface
  *
  * @package   Squille
  * @author    David Buros <david.buros@gmail.com>
  * @copyright 2015 David Buros
  * @licence   WTFPL see LICENCE.md file
  */
-class JsonFormater implements FormaterInterface
+interface PluginInterface
 {
     /**
-     * {@inheritdoc}
+     * Attach an event to emitter
      *
-     * @return string
+     * @param EventEmitterInterface $emitter Event emitter
+     *
+     * @return mixed
      */
-    public function format(array $report)
-    {
-        return json_encode($report, JSON_PRETTY_PRINT);
-    }
+    public function attachEvents(EventEmitterInterface $emitter);
 }

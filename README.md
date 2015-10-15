@@ -1,5 +1,13 @@
 A toolsuite for PHP interactive performance profiling.
 
+Description
+===========
+
+The purpose of this tool is clearly not to profile your application at regular interval on production server (yeah, I mean like Blackfire.io or Tideways).   
+The goal of this tool is to help you develop your PHP application the right way with the less effort to access run informations.
+Modularity allows you to add your own collector or to choose the most convenient output in your development stack. But you can let the magic
+appends and use the Chrome extension with just one line into your own code.
+
 How it works
 ============
 
